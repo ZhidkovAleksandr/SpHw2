@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util = "http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+
+        <bean id ="malinua" class="org.example.Dog">
+            <constructor-arg index="0"  value="4"/>
+            <constructor-arg index="1" value="2"/>
+            <constructor-arg index="" value="true"/>
+            <property name="name" value="Rex" />
+        </bean>
+
+    <util:map id="mapModel" map-class="java.util.HashMap">
+              <entry key = "renault">
+                <value>5</value>
+              </entry>
+    </util:map>
+
+        <bean id="str" class="java.lang.String">
+            <constructor-arg value="brown"/>
+        </bean>
+
+    <bean id="car" class="org.example.Car">
+        <property name="whatModel" ref="mapModel"/>
+    </bean>
+
+    </beans>
